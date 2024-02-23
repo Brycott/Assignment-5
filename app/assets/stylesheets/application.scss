@@ -14,4 +14,11 @@
  *= require_self
  */
 
- @import "bootstrap";
+.footer {
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@import "bootstrap";

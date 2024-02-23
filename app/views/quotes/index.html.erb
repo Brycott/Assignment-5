@@ -1,0 +1,39 @@
+<div class="container">
+  <h1 class="bi bi-chat-square-quote-fill text-primary text-center display-1"></h1>
+      <p style="color: green"><%= notice %></p>
+
+      <div class="d-flex justify-content-between">
+      <h1 class="text-primary">Quotes</h1>
+      <%= link_to new_quote_path, class: "btn btn-primary h-100" do %>
+      <i class="bi bi-plus"></i> New Quote
+      <% end %>
+      </div>
+
+      <hr>
+       <% if @quotes.any? %>
+    <div class="row">
+      <% @quotes.each do |quote| %>
+        <div>
+          <%= render partial: 'quote', locals: { quote: quote } %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>Nothing to show.</p>
+  <% end %>
+</div>
+
+<footer class="container">
+  <p class="bg-dark text-white text-center footer mt-5"> &copy All rights reserved - WEB 3200 - 2024</p>
+  </footer>
+<!--<div id="quotes">
+  <% @quotes.each do |quote| %>
+    <%= render quote %>
+    <p>
+      <%= link_to "Show this quote", quote %>
+    </p>
+  <% end %>
+</div>
+-->
+
+
