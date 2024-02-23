@@ -44,7 +44,7 @@ class QuotesController < ApplicationController
   # PATCH/PUT /quotes/1
   def update
     if @quote.update(quote_params)
-      redirect_to @quote, notice: "Quote was successfully updated.", status: :see_other
+      redirect_to quotes_path, notice: "Quote was successfully updated.", status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
