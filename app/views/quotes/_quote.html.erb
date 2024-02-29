@@ -2,7 +2,9 @@
   <div class="card w-100 d-flex">
     <div class="card-header">
       <div class="d-flex justify-content-between fs-5">
-        <strong>Quote</strong>
+        <strong class="d-flex">Quote  <% if quote.year.present? %>
+                <p class="card-text ms-2">  (<%= quote.year %>)</p>
+              <% end %></strong>
         <p class="card-text flex-end fs-5"><strong><%= quote.votes_count %></strong></p>
       </div>
     </div>

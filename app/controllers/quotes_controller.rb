@@ -3,7 +3,17 @@ class QuotesController < ApplicationController
 
   # GET /quotes
   def index
-    @quotes = Quote.all
+     sort_by = params[:sort_by]
+
+    if sort_by == 'year'
+      @quotes = Quote.order(year: :asc)
+    elsif sort_by == 'said_by'
+      @quotes = Quote.order(said_by: :asc)
+    elsif sort_by == 'saying'
+      @quotes = Quote.order(saying: :asc)
+    else
+      @quotes = Quote.all
+    end
   end
 
   # GET /quotes/1
@@ -64,7 +74,7 @@ class QuotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def quote_params
-      params.require(:quote).permit(:saying, :said_by)
+      params.require(:quote).permit(:saying, :said_by, :year, :notes)
     end
 
 

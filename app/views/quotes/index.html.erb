@@ -4,11 +4,24 @@
 
       <div class="d-flex justify-content-between">
       <h1 class="text-primary">Quotes</h1>
-      <%= link_to new_quote_path, class: "btn btn-primary h-100" do %>
+  <div class=" d-flex align-items-center">
+      <%= link_to url_for(sort_by: 'year') do %>
+      <button class="btn border-1 border-primary text-primary me-2 fw-semibold"> <i class="bi bi-sort-numeric-down"></i>Sort by Year</button>
+    <% end %>
+
+    <%= link_to url_for(sort_by: 'said_by') do %>
+      <button class="btn border-1 border-primary text-primary me-2 fw-semibold"> <i class="bi bi-sort-down-alt"></i>Sort by Said By</button>
+    <% end %>
+
+    <%= link_to url_for(sort_by: 'saying') do %>
+      <button class="btn border-1 border-primary text-primary me-2 fw-semibold"> <i class="bi bi-sort-down-alt"></i> Sort by Saying</button>
+    <% end %>
+
+      <%= link_to new_quote_path, class: "btn btn-primary h-75" do %>
       <i class="bi bi-plus"></i> New Quote
       <% end %>
       </div>
-
+</div>
       <hr>
        <% if @quotes.any? %>
     <div class="row">
